@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxe - Premium E-Commerce</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <h1>Luxe</h1>
+          </a>
+        </div>
+        <nav class="nav-menu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="pages/products.html">Shop</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn search-toggle" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <a href="pages/account.html" class="icon-btn" aria-label="Account">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </a>
+          <a href="pages/wishlist.html" class="icon-btn" aria-label="Wishlist">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="badge wishlist-count">0</span>
+          </a>
+          <button class="icon-btn cart-toggle" aria-label="Cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <span class="badge cart-count">0</span>
+          </button>
+          <button class="menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/products.html">Shop</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+      <div class="container">
+        <div class="search-header">
+          <h3>Search Products</h3>
+          <button class="close-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div class="search-form">
+          <input type="text" id="search-input" placeholder="Search for products...">
+          <button type="submit" class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <!-- Cart items will be displayed here -->
+      <div class="empty-cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <p>Your cart is empty</p>
+        <a href="pages/products.html" class="btn btn-primary">Start Shopping</a>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <a href="pages/checkout.html" class="btn btn-primary checkout-btn">Checkout</a>
+    </div>
+  </div>
+  <div class="overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2 class="hero-title">Discover Premium Quality Products</h2>
+        <p class="hero-subtitle">Elevate your lifestyle with our curated collection</p>
+        <a href="pages/products.html" class="btn btn-primary">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="categories section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Shop by Category</h2>
+        <p class="section-subtitle">Browse our top categories</p>
+      </div>
+      <div class="categories-grid">
+        <a href="pages/products.html?category=electronics" class="category-card">
+          <div class="category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+          </div>
+          <h3>Electronics</h3>
+        </a>
+        <a href="pages/products.html?category=fashion" class="category-card">
+          <div class="category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"></path></svg>
+          </div>
+          <h3>Fashion</h3>
+        </a>
+        <a href="pages/products.html?category=home" class="category-card">
+          <div class="category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <h3>Home & Living</h3>
+        </a>
+        <a href="pages/products.html?category=beauty" class="category-card">
+          <div class="category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>Beauty</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-products section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-subtitle">Discover our best-selling items</p>
+      </div>
+      <div class="products-grid" id="featured-products">
+        <!-- Products will be loaded here via JS -->
+      </div>
+      <div class="section-footer">
+        <a href="pages/products.html" class="btn btn-outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals -->
+  <section class="new-arrivals section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">New Arrivals</h2>
+        <p class="section-subtitle">The latest additions to our collection</p>
+      </div>
+      <div class="products-grid" id="new-products">
+        <!-- Products will be loaded here via JS -->
+      </div>
+      <div class="section-footer">
+        <a href="pages/products.html?sort=newest" class="btn btn-outline">View All New Arrivals</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promotion Banner -->
+  <section class="promo-banner">
+    <div class="container">
+      <div class="promo-content">
+        <h2>Summer Sale</h2>
+        <p>Up to 50% off on selected items</p>
+        <a href="pages/products.html?sale=true" class="btn btn-light">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Read testimonials from our satisfied customers</p>
+      </div>
+      <div class="testimonials-slider" id="testimonials-slider">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <div class="testimonial-rating">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p>"The quality of the products exceeded my expectations. Fast shipping and excellent customer service!"</p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Sarah Johnson</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <div class="testimonial-rating">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p>"I'm always impressed by the selection of products. The website is easy to navigate and the checkout process is seamless."</p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Michael Davis</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <div class="testimonial-rating">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p>"Absolutely love the attention to detail in every product. Will definitely be shopping here again!"</p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Emily Wilson</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter section">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>Subscribe to Our Newsletter</h2>
+          <p>Stay updated with the latest products, exclusive offers, and more.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <h2>Luxe</h2>
+          </div>
+          <p class="footer-desc">Premium e-commerce platform offering high-quality products for every lifestyle.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Shop</h3>
+          <ul class="footer-links">
+            <li><a href="pages/products.html?category=electronics">Electronics</a></li>
+            <li><a href="pages/products.html?category=fashion">Fashion</a></li>
+            <li><a href="pages/products.html?category=home">Home & Living</a></li>
+            <li><a href="pages/products.html?category=beauty">Beauty</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Support</h3>
+          <ul class="footer-links">
+            <li><a href="pages/faq.html">FAQ</a></li>
+            <li><a href="pages/shipping.html">Shipping & Returns</a></li>
+            <li><a href="pages/privacy.html">Privacy Policy</a></li>
+            <li><a href="pages/terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Contact</h3>
+          <ul class="contact-info">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              <span>123 Main Street, New York, NY 10001</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>(123) 456-7890</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>support@luxe.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Luxe. All rights reserved.</p>
+        <div class="payment-methods">
+          <img src="https://via.placeholder.com/40x25" alt="Visa">
+          <img src="https://via.placeholder.com/40x25" alt="Mastercard">
+          <img src="https://via.placeholder.com/40x25" alt="PayPal">
+          <img src="https://via.placeholder.com/40x25" alt="Apple Pay">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
